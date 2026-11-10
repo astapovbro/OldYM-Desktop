@@ -1,0 +1,95 @@
+# OldYM Desktop — монорепо, корневой .gitignore
+# покрывает /legacy и /wpf, файл один на весь репозиторий
+
+# ---------------------------------------------------------------- сборка ---
+# csc (build.cmd) и msbuild (build.cmd для wpf) кладут результат сюда
+bin/
+obj/
+Debug/
+Release/
+x86/
+x64/
+*.exe
+*.pdb
+*.mdb
+*.cache
+*.ilk
+*.exp
+*.lib
+*.res
+*.tlog
+*.log
+
+# бэкапы, которые делает build.sh при каждой сборке
+build-backups/
+
+# архивы релизов — им место в Releases, а не в истории
+*.zip
+*.7z
+*.rar
+*.tar.gz
+
+# ------------------------------------------------------------- библиотеки ---
+# без этого правила *.dll выше выкинул бы BouncyCastle из lib/
+lib/*.dll
+!lib/**/*.dll
+packages/
+*.nupkg
+
+# ------------------------------------------------------- visual studio ----
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.DotSettings.user
+*.VC.db
+*.VC.VC.opendb
+TestResults/
+*.coverage
+*.coveragexml
+
+# ---------------------------------------------------- msbuild / nuget ------
+project.lock.json
+project.assets.json
+*.nuget.props
+*.nuget.targets
+*.props.user
+
+# ------------------------------------------------- данные пользователя ----
+# лежит в %LOCALAPPDATA%, но на случай запуска из папки проекта
+account.dat
+account.json
+*.token
+cache/
+OldYM/
+assets/sidebar.local.png
+assets/about.local.png
+
+# ------------------------------------------------------------ подписи -----
+# keystore, пароли и ключи в репозиторий не попадают никогда
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.snk
+*.cer
+*.mobileprovision
+*.apk
+*.aab
+*.xap
+
+# --------------------------------------------------------- система -------
+Thumbs.db
+Desktop.ini
+desktop.ini
+.DS_Store
+._*
+*~
+*.swp
+*.bak
+*.orig
+*.rej
