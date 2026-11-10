@@ -12,7 +12,7 @@
 
 ## Какую версию брать
 
-| | Legacy | WPF |
+| | Legacy | Desktop |
 |---|---|---|
 | папка | `legacy/` | `desktop/` |
 | интерфейс | WinForms | WPF |
