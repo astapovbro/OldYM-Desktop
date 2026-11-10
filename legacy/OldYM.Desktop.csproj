@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{AE034C1C-FE4B-41EA-A067-88B41AA7C012}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OldYM</RootNamespace>
+    <AssemblyName>OldYM</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+    <Optimize>true</Optimize>
+    <ApplicationIcon>assets\oldym.ico</ApplicationIcon>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="BouncyCastle.Crypto"><HintPath>lib\BouncyCastle.Crypto.dll</HintPath><Private>True</Private></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Api.cs" /><Compile Include="src\Net.cs" /><Compile Include="src\Storage.cs" /><Compile Include="src\MainForm.cs" /><Compile Include="src\Appearance.cs" /><Compile Include="src\Program.cs" />
+    <None Include="OldYM.Desktop.exe.config"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+    <Content Include="assets\roots.pem"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="assets\roots-source.txt"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="assets\oldym.ico"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,47 @@
+<Window x:Class="OldYM.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Вход в Яндекс" Width="520" MinHeight="420" MinWidth="480"
+        SizeToContent="Height" WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
+        Background="{StaticResource Bg}" Foreground="{StaticResource Fg}"
+        FontFamily="Segoe UI">
+  <Grid Margin="22">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <TextBlock Text="Войти в Яндекс Музыку" FontSize="22" FontWeight="Bold" Foreground="{StaticResource Accent}" />
+    <TextBlock Grid.Row="1" Margin="0,8,0,14" TextWrapping="Wrap" Foreground="{StaticResource Dim}"
+               Text="Получи код входа и подтверди его на странице Яндекса. Можно открыть страницу на другом устройстве." />
+    <Button x:Name="DeviceButton" Grid.Row="2" Content="Получить код входа" Style="{StaticResource Flat}"
+            HorizontalAlignment="Left" Click="DeviceButton_Click" />
+    <Border Grid.Row="3" Background="{StaticResource Field}" CornerRadius="8" Padding="14" Margin="0,12,0,8">
+      <StackPanel>
+        <TextBlock Text="Код подтверждения" Foreground="{StaticResource Dim}" FontSize="12" />
+        <TextBlock x:Name="CodeText" Text="— — — — — —" FontSize="27" FontWeight="Bold"
+                   Foreground="{StaticResource Accent}" Margin="0,4,0,0" />
+        <Button x:Name="OpenUrlButton" Content="Открыть страницу подтверждения" Style="{StaticResource Flat}"
+                HorizontalAlignment="Left" Margin="0,8,0,0" IsEnabled="False" Click="OpenUrlButton_Click" />
+      </StackPanel>
+    </Border>
+    <TextBlock Grid.Row="4" x:Name="StatusText" Text="Или введи OAuth-токен вручную ниже."
+               Foreground="{StaticResource Dim}" TextWrapping="Wrap" Margin="0,0,0,12" />
+    <StackPanel Grid.Row="5">
+      <TextBlock Text="OAuth-токен" Foreground="{StaticResource Dim}" FontSize="12" Margin="0,0,0,5" />
+      <PasswordBox x:Name="TokenBox" Padding="9,7" Background="{StaticResource Field}" Foreground="{StaticResource Fg}"
+                   BorderThickness="0" />
+    </StackPanel>
+    <CheckBox x:Name="RememberCheck" Grid.Row="6" Content="Сохранить вход на этом компьютере"
+              IsChecked="True" VerticalAlignment="Top" Margin="0,14,0,0" Foreground="{StaticResource Dim}" />
+    <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Right">
+      <Button Content="Отмена" Style="{StaticResource Flat}" Margin="0,0,8,0" IsCancel="True" />
+      <Button Content="Войти" Style="{StaticResource Flat}" Click="SignInButton_Click" />
+    </StackPanel>
+  </Grid>
+</Window>

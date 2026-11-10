@@ -1,0 +1,106 @@
+<Window x:Class="OldYM.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="О программе"
+        Width="560" Height="340"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        Background="#171719"
+        Foreground="#F2F2F2"
+        FontFamily="Segoe UI"
+        FontSize="32">
+
+  <Grid Margin="20,20,20,16">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="96" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="44" />
+    </Grid.RowDefinitions>
+
+    <Image Grid.Row="0" Grid.Column="0"
+           Source="/OldYM;component/assets/oldym-about.png"
+           Width="72" Height="72"
+           HorizontalAlignment="Left"
+           VerticalAlignment="Top"
+           Margin="0,2,16,2"
+           Stretch="Uniform" />
+
+    <Grid Grid.Row="0" Grid.Column="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30" />
+        <RowDefinition Height="22" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <TextBlock Grid.Row="0"
+                 Text="OldYM Desktop"
+                 FontFamily="Segoe UI"
+                 FontSize="24"
+                 FontWeight="Bold"
+                 Foreground="#F2F2F2"
+                 VerticalAlignment="Center" />
+      <TextBlock Grid.Row="1"
+                 Text="1.0 · неофициальный клиент Яндекс Музыки"
+                 FontFamily="Segoe UI"
+                 FontSize="16"
+                 Foreground="#FFD830"
+                 VerticalAlignment="Center"
+                 TextTrimming="CharacterEllipsis" />
+      <TextBlock Grid.Row="2"
+                 Margin="0,6,0,0"
+                 FontFamily="Segoe UI"
+                 FontSize="13"
+                 Foreground="#9B9BA4"
+                 TextWrapping="Wrap">
+        <Run Text="Поддержка Windows 7 SP1 и выше." />
+        <LineBreak />
+        <Run Text="WPF · .NET Framework 4.5.2 · x86." />
+        <LineBreak />
+        <LineBreak />
+        <Run Text="HTTPS: Bouncy Castle, TLS 1.2, распространяется по лицензии LGPL-v3.0-or-later." />
+        <LineBreak />
+        <Run Text="MP3 кэшируется на диске и воспроизводится через Windows MCI (winmm)." />
+        <LineBreak />
+        <LineBreak />
+        <Run Text="Автор клиента: Astapov_Bro" />
+      </TextBlock>
+    </Grid>
+
+    <Grid Grid.Row="1" Grid.Column="1">
+      <Button x:Name="OkButton"
+              Content="ОК"
+              Width="110" Height="34"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Bottom"
+              IsDefault="True"
+              IsCancel="True"
+              Click="OkButton_Click"
+              Foreground="#141414"
+              Background="#FFD830"
+              BorderThickness="0"
+              FontFamily="Segoe UI"
+              FontSize="13"
+              Cursor="Hand"
+              FocusVisualStyle="{x:Null}">
+        <Button.Template>
+          <ControlTemplate TargetType="Button">
+            <Border x:Name="ButtonBorder" Background="{TemplateBinding Background}">
+              <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="ButtonBorder" Property="Background" Value="#FFE15E" />
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="ButtonBorder" Property="Background" Value="#EFC720" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Button.Template>
+      </Button>
+    </Grid>
+  </Grid>
+</Window>

@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/certifi/python-certifi/b71b898632759b30c6c309aa663f0b8f53bbe13a/certifi/cacert.pem
