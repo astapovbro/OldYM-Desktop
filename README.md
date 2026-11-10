@@ -2,6 +2,8 @@
 
 # OldYM Desktop
 
+![OldYM](https://github.com/astapovbro/OldYM/blob/main/img/icon.png)
+
 Неофициальный клиент Яндекс Музыки для слабых ПК под Windows.
 В одном репозитории — две независимые редакции: лёгкая WinForms и более близкая к оригиналу WPF.
 
