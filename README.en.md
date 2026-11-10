@@ -2,6 +2,8 @@
 
 # OldYM Desktop
 
+![OldYM](https://github.com/astapovbro/OldYM/blob/main/img/icon.png)
+
 An unofficial Yandex Music client for low-end Windows PCs.
 This repository holds two independent editions: a light WinForms one and a closer-to-the-original WPF one.
 
